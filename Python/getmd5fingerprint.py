@@ -1,3 +1,6 @@
+# This script will get the MD5 fingerprint of a remote host
+# Usecase: You want to verify the fingerprint of a remote host before connecting to it
+
 # Import Modules
 import paramiko
 import hashlib
