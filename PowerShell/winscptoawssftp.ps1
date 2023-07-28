@@ -1,4 +1,8 @@
-# This is the script to upload files from the server to the SFTP Transfer backed S3
+# Use Case for this was to automate uploads to AWS S3 via AWS Transfer Family: SFTP from a Windows Bastion Host
+# I realized that someone else might have a similar use case or might need to automate SFTP transfers from Windows and decided to publish the script here
+# This is the script to upload files from Windows Server to an AWS SFTP Transfer backed AWS S3 Bucket
+# kv | 28/07/2023 | v0.10
+
 # Load WinSCP .NET assembly
 Add-Type -Path "C:\Program Files (x86)\WinSCP\WinSCPnet.dll"
 
