@@ -1,0 +1,25 @@
+<# This Python script is designed to automatically upload files to a remote server via SFTP (SSH File Transfer Protocol).
+
+The script uses the `paramiko` module for SSH and SFTP operations, `tkinter` for a simple file or directory selection GUI, 
+and `tqdm` for displaying progress bars during file upload. Logging operations are performed using the `logging` module, 
+and threading is accomplished with `concurrent.futures`. The `retrying` module is used to implement retrying of failed uploads.
+
+The script first reads in the server and user credentials from a config.ini file. The user's private key is used for 
+authentication, and the server hostname and the remote directory are specified in this config file.
+
+Upon running the script, a GUI prompts the user to select either individual files or a directory for upload. 
+
+When the user confirms the selection, the script establishes an SFTP session to the specified server using the provided 
+credentials, and navigates to the remote directory.
+
+The script then begins uploading the selected files or directories. Each file upload is accompanied by a progress bar which 
+displays the file name and the upload progress in gigabytes. The script can upload multiple files simultaneously 
+due to threading.
+
+If an upload fails, the script will attempt to retry the upload a specified number of times with a specified delay between 
+retries. 
+
+The script also logs its activities, which include upload start, completion, success, failure, and connection errors.
+
+At the end of the script, the SFTP session is closed. The script does not terminate until all selected files and directories 
+have been processed. #>
